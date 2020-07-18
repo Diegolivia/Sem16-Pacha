@@ -2,20 +2,24 @@
   <div class="home">
     <NaviBar />
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <component v-bind:is="$store.state.CurrPage"></component>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 import NaviBar from "@/components/NavBar.vue";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld,
     NaviBar
   }
 };
 </script>
+
+<style>
+img{
+  padding-top: 50px;
+}
+</style>
